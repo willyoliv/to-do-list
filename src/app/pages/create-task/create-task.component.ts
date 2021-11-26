@@ -17,7 +17,7 @@ export class CreateTaskComponent implements OnInit {
   path?: string = '';
   task?: any;
   title: string = '';
-  isFormUpload: boolean = false;
+  isFormUpdate: boolean = false;
 
   constructor(private taskService: TasksService, private snackBar: MatSnackBar, private router: ActivatedRoute) { }
 
@@ -27,7 +27,7 @@ export class CreateTaskComponent implements OnInit {
     if (this.path === "edit-task") {
       this.loadTask();
       this.title = "Editar tarefa";
-      this.isFormUpload = true;
+      this.isFormUpdate = true;
     } else {
       this.formCreateTask = new FormGroup({
         'title': new FormControl(null),
@@ -53,7 +53,7 @@ export class CreateTaskComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.isFormUpload) {
+    if (!this.isFormUpdate) {
       this.task = new Task();
     }
     let title = this.formCreateTask?.controls['title'].value;
@@ -62,8 +62,8 @@ export class CreateTaskComponent implements OnInit {
     this.task.date = date;
     this.task.description = description;
     this.task.title = title;
-    if (this.isFormUpload) {
-      this.taskService.upload(this.task).subscribe({
+    if (this.isFormUpdate) {
+      this.taskService.update(this.task).subscribe({
         complete: () => {
           this.snackBar.open('Tarefa atualizada!', 'Ok', { duration: 3000 });
         }

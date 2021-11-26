@@ -35,7 +35,7 @@ export class TasksService {
     return this.http.delete(url);
   }
 
-  upload(task: Task): Observable<any> {
+  update(task: Task): Observable<any> {
     let url = URL +'/' + task.id;
     return this.http.put(url, task);
   }

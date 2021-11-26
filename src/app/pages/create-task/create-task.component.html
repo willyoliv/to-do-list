@@ -1,24 +1,26 @@
-<mat-card id="card-task">
-  <div id="titulo" style="text-align: center;">
-    <h2>{{ title }}</h2>
-  </div>
-  <form *ngIf="formCreateTask" class="form-content" [formGroup]="formCreateTask" (submit)="onSubmit() ">
-    <mat-form-field appearance="outline">
-      <mat-label>Titulo</mat-label>
-      <input ng-disabled="isFormUpload" matInput formControlName="title" placeholder="Digite o título" >
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Data de entrega</mat-label>
-      <input type="date" matInput formControlName="date" placeholder="Informe uma data" min="2021-11-23">
+<div class="container">
+  <mat-card id="card-task">
+    <div id="titulo" style="text-align: center;">
+      <h2>{{ title }}</h2>
+    </div>
+    <form *ngIf="formCreateTask" class="form-content" [formGroup]="formCreateTask" (submit)="onSubmit() ">
+      <mat-form-field appearance="outline">
+        <mat-label>Titulo</mat-label>
+        <input ng-disabled="isFormUpdate" matInput formControlName="title" placeholder="Digite o título" >
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Data de entrega</mat-label>
+        <input type="date" matInput formControlName="date" placeholder="Informe uma data" min="2021-11-23">
+        
+      </mat-form-field>
       
-    </mat-form-field>
-    
-    <mat-form-field appearance="outline">
-      <mat-label>Descrição</mat-label>
-      <textarea id="textarea" matInput formControlName="description" placeholder="Digite uma descrição"></textarea>
-    </mat-form-field>
-    <button RemoveClick mat-raised-button color="primary" type="Submit">
-      {{ isFormUpload ? 'Atualizar' : 'Criar' }}
-    </button>
-  </form>
-</mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <textarea id="textarea" matInput formControlName="description" placeholder="Digite uma descrição"></textarea>
+      </mat-form-field>
+      <button RemoveClick mat-raised-button color="primary" type="Submit">
+        {{ isFormUpdate ? 'Atualizar' : 'Criar' }}
+      </button>
+    </form>
+  </mat-card>
+</div>

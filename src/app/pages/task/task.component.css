@@ -25,4 +25,9 @@ textarea:disabled{
   color: #3f51b5 !important;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 

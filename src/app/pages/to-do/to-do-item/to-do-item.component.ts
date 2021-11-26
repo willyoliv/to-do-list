@@ -17,11 +17,9 @@ export class ToDoItemComponent implements OnInit {
   @Input('taskObj') task?: Task;
   @Input() taskId?: number;
   @Output() deletedTask = new EventEmitter<boolean>();
-  @ViewChild('checkboxInput') checkboxInput?: ElementRef;
-  @Output() warnTaskWasDone: EventEmitter<any> = new EventEmitter();
 
   unSubDelete: any;
-  unSubUpload: any;
+  unSubUpdate: any;
 
   constructor(private taskService:TasksService, private snackBar: MatSnackBar) { }
 
@@ -32,8 +30,8 @@ export class ToDoItemComponent implements OnInit {
     if (this.unSubDelete) {
       this.unSubDelete.unsubscribe();
     }
-    if (this.unSubUpload) {
-      this.unSubUpload.unsubscribe();
+    if (this.unSubUpdate) {
+      this.unSubUpdate.unsubscribe();
     }
   }
 
@@ -45,12 +43,8 @@ export class ToDoItemComponent implements OnInit {
 
   markAsDone($event: MatCheckboxChange) {
     this.task!.done = $event.checked ;
-    this.unSubUpload = this.taskService.upload(this.task!).subscribe();
+    this.unSubUpdate = this.taskService.update(this.task!).subscribe();
     // this.warnTaskWasDone.emit({ id: this.taskId, value: event.checked });
-  }
-
-  showTaskDetails($event: MouseEvent) {
-    console.log("show task");
   }
 
   stopClickPropagation($event: MouseEvent) {
