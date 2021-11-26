@@ -1,0 +1,32 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.white-border {
+  border: 2px solid white
+}
+
+.active-link {
+  color: #ff4081;
+}
+
+.button {
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.link-toolbar{
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  margin: auto 10px;
+}
+
+.link-toolbar:hover{
+  color: #ff4081;
+}

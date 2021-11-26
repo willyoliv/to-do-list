@@ -1,0 +1,15 @@
+.card-item {
+  margin: 10px;
+  width: 700px;
+  cursor: pointer;
+}
+
+.card-item:hover {
+  background-color: rgba(59, 93, 124, 0.3);
+}
+
+.checkbox {
+  margin: auto !important;
+  margin-right: 10px !important;
+}
+

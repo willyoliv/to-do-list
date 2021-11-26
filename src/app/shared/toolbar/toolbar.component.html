@@ -1,0 +1,27 @@
+<header>
+  <mat-toolbar color="primary">
+    <span class="spacer">
+      <button routerLink="" mat-button>
+        <h2>To Do List</h2>
+      </button>
+    </span>
+    <!-- <button routerLink="create-task" routerLinkActive="active-link" mat-button>Criar Tarefa</button> -->
+    <a [routerLink]="['/create-task']" class="link-toolbar">
+      <span routerLinkActive="active-link" class="button">
+        Criar Tarefa
+      </span>
+    </a>
+    <!-- <button routerLink="task" routerLinkActive="active-link" mat-button>Visualizar Tarefa</button> -->
+    <a [routerLink]="['/task']" class="link-toolbar">
+      <span RemoveClick routerLinkActive="active-link" class="button">
+        Visualizar Tarefa
+      </span>
+    </a>
+    <!-- <button routerLink="edit-task" routerLinkActive="active-link" mat-button >Atualizar Tarefa</button> -->
+    <a [routerLink]="['/edit-task']" class="link-toolbar">
+      <span RemoveClick routerLinkActive="active-link" class="button">
+        Atualizar Tarefa
+      </span>
+    </a>
+  </mat-toolbar>
+</header>

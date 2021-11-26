@@ -1,0 +1,28 @@
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#card-task {
+  width: 400px;
+  height: 400px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+#textarea {
+  resize: none;
+}
+
+input:disabled{
+  color: #3f51b5 !important;
+}
+textarea:disabled{
+  color: #3f51b5 !important;
+}
+
+

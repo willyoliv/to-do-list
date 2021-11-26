@@ -1,0 +1,11 @@
+<div id="titulo" style="text-align: center;">
+  <h1 changeBackground>Lista de Tarefas</h1>
+</div>
+
+<div *ngIf="tasksList$ | async as tasksList;">
+    <div *ngIf="tasksList.length === 0">
+      <h3>Você não possui nenhuma tarefa cadastrada!</h3>
+    </div>
+    <to-do-item *ngFor="let task of tasksList;" [taskObj]="task" [taskId]="task.id" (warnTaskWasDone)="markTaskAsDone($event)" (deletedTask)="reloadList($event)">
+    </to-do-item>
+</div>

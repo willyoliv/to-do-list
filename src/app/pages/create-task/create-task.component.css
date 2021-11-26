@@ -1,0 +1,19 @@
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+#card-task {
+  width: 400px;
+  height: 400px;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+#textarea {
+  resize: none;
+}

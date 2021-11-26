@@ -1,0 +1,11 @@
+<mat-card *ngIf="task" class="card-item" style="display: flex;" [routerLink]="['task', task.id]">
+  <mat-checkbox class="checkbox" #checkboxInput [checked]="task.done" (change)="markAsDone($event)" (click)="stopClickPropagation($event)"></mat-checkbox>
+  <h3 style="flex: 1; margin: auto"> {{ task.title }}</h3>
+  <button mat-icon-button color="primary" aria-label="edit task" [routerLink]="['edit-task', task.id]" (click)="stopClickPropagation($event)">
+  <!-- <button mat-icon-button color="primary" aria-label="edit task" [routerLink]="['edit-task']" [state]="{id: task.id!}"> -->
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-icon-button aria-label="delete task" color="warn" (click)="delete(task.id)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
