@@ -30,3 +30,7 @@
 .link-toolbar:hover{
   color: #ff4081;
 }
+
+#logout {
+  cursor: pointer;
+}

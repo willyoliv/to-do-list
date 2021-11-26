@@ -32,10 +32,4 @@ export class ToDoComponent implements OnInit {
     this.getTasks();
   }
 
-  markTaskAsDone(obj: { id: number, value: boolean }) {
-    // this.task!.done = event.checked ; 
-    // this.taskService.upload(this.task!).subscribe();
-    console.log(obj.id);
-  }
-
 }

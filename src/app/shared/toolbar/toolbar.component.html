@@ -1,5 +1,5 @@
 <header>
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" *ngIf="showMenu">
     <span class="spacer">
       <button routerLink="" mat-button>
         <h2>To Do List</h2>
@@ -23,5 +23,6 @@
         Atualizar Tarefa
       </span>
     </a>
+    <a class="link-toolbar" id="logout" (click)="logoutUser()">LogOut</a>
   </mat-toolbar>
 </header>
